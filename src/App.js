@@ -17,33 +17,29 @@ const listacuros={
         decripcion:"materia español para aprender español"
     },
 {   nombre:"cálculo",
-    ID:446,
+    id: Math.floor(Math.random()* 10000),
     decripcion:"materias esenciales para desarrollo de pensamiento lógico matemático "
 },
 {
     nombre:"Lógica Digital",
-    ID:447,
+    id: Math.floor(Math.random()* 10000),
     decripcion:"materia desarrollo lógico en circuitos"
 
 },
 {
     nombre:"Física",
-    ID:448,
+    id: Math.floor(Math.random()* 10000),
     decripcion:"materia para comprender el cómo funciona nuestro universo"
 },
 {
     nombre:"PNT",
-    ID:449,
+    id: Math.floor(Math.random()* 10000),
     decripcion:"Desarrollo del mundo de java script, css, html y mucho mas"
 }
 
 ]   
 }   
 
-function CurseItem(){
-    return(
-        <div>
-            
-        </div>
-    );
-}
+const CurseItem = () =><div> </div>;
+    
+
