@@ -28,6 +28,11 @@ const listacuros={
     nombre:"Física",
     ID:448,
     decripcion:"materia para comprender el cómo funciona nuestro universo"
+},
+{
+    nombre:"PNT",
+    ID:449,
+    decripcion:"Desarrollo del mundo de java script, css, html y mucho mas"
 }
 
 ]   
