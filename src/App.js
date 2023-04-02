@@ -17,6 +17,9 @@ export default App;
         {id: Math.floor(Math.random), nombre: 'fisica', descripcion: 'para aprender leyes de newton'}
     ]);
 
-    
+    const añadircurso= (Textname, textdescrip) =>{
+        const nuevocurso = {id: Math.floor(Math.random)(), nombre: Textname, descripcion: textdescrip};
+        setcurso([...curso,nuevocurso])
+    };
  };
 
