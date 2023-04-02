@@ -21,5 +21,10 @@ export default App;
         const nuevocurso = {id: Math.floor(Math.random)(), nombre: Textname, descripcion: textdescrip};
         setcurso([...curso,nuevocurso])
     };
+
+    const eliminarcurso=(id)=>{
+        const nuevocurso = curso.filter((curso)=> curso.id );
+        setcurso(nuevocurso);
+    };
  };
 
