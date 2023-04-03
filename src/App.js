@@ -39,7 +39,7 @@ export const CourseList=()=>{
     })
         return (
             <>
-            {CourseItem("porno","acto sexual")}
+            {CourseItem("calculo","matemáticas pura")}
             <ul>{CourseItem1}</ul>
 
             </>
