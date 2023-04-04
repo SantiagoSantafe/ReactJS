@@ -3,7 +3,7 @@ import { useState } from 'react';
 export const CourseList=()=>{
     const [curso, setcurso] = useState(
         [
-        {id: Math.floor(Math.random), 
+        {id: Math.floor(Math.random()*1000), 
             nombre: 'calculo', 
             descripcion: 'para aprender matematicas'
         },
@@ -18,7 +18,7 @@ export const CourseList=()=>{
     ])
 
     const CourseItem= (Textname, textdescrip) =>{
-        const nuevocurso = {id: Math.floor(Math.random)(), nombre: Textname, descripcion: textdescrip};
+        const nuevocurso = {id: Math.floor(Math.random()*1000), nombre: Textname, descripcion: textdescrip};
         setcurso([...curso,nuevocurso])
     };
 
