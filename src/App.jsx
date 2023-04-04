@@ -1,52 +1,71 @@
 import React from "react";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export const CourseList = () => {
-  const [curso, setcurso] = useState([{
-        id:  Math.floor(Math.random()*1000),
-        nombre: "calculo",
-        descripcion: "para aprender matematicas",
+  const [curso, setcurso] = useState([
+    {
+      id: Math.floor(Math.random() * 1000),
+      nombre: "calculo",
+      descripcion: "para aprender matematicas",
     },
     {
-      id: Math.floor(Math.random()*1000),
+      id: Math.floor(Math.random() * 1000),
       nombre: "Ingles",
       descripcion: "para aprender idiomas",
     },
     {
-      id: Math.floor(Math.random()*1000),
+      id: Math.floor(Math.random() * 1000),
       nombre: "fisica",
       descripcion: "para aprender leyes de newton",
     },
-    
   ]);
-  
-  console.log(curso)
-const CourseItem = (Textname, textdescrip) => {
+
+  console.log(curso);
+  const CourseItem = (Textname, textdescrip) => {
     const nuevocurso = {
-        id: Math.floor(Math.random() * 1000),
-        nombre: Textname,
-        descripcion: textdescrip,
-      
+      id: Math.floor(Math.random() * 1000),
+      nombre: Textname,
+      descripcion: textdescrip,
     };
-    useEffect(()=>{
+    useEffect(() => {
       setcurso([...curso, nuevocurso]);
-    }, [])
-    
+    }, []);
   };
   const CourseItem1 = curso.map((materia) => {
-    return(
+    return (
       <li key={materia}>
-        <p >{materia.id}</p>
-        <p >{materia.nombre}</p>
-        <p >{materia.descripcion}</p>
-        <button onClick={()=>setcurso(curso.filter((curso) => curso.id!==materia.id))}>eliminar</button>
+        <p>{materia.id}</p>
+        <p>{materia.nombre}</p>
+        <p>{materia.descripcion}</p>
+        <button
+          onClick={() =>
+            setcurso(curso.filter((curso) => curso.id !== materia.id))
+          }
+        >
+          eliminar
+        </button>
       </li>
     );
   });
   return (
     <>
-      {CourseItem("njsand","ndnasjdn")}
+      {CourseItem("njsand", "ndnasjdn")}
       <ul>{CourseItem1}</ul>
+      <form>
+        <label>
+          Nombre:
+          <input
+            name="nombre"
+            type="text"
+            placeholder="Ingresa el nombre"
+          ></input>
+        </label>
+        <label>
+          Descripción:
+          <textarea type="text"></textarea>
+        </label>
+        <button type="submit">Agregar curso</button>
+      </form>
     </>
   );
 };
