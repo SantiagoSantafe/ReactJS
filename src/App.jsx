@@ -18,7 +18,6 @@ export const CourseList = () => {
       descripcion: "para aprender leyes de newton",
     },
   ]);
-
   console.log(curso)
 
   const Existe=(numero)=>{
@@ -30,6 +29,23 @@ export const CourseList = () => {
       }
       }))
   }
+  const [nombre2,setnombre2] =useState('');
+  const [descripcion2,setdescripcion2] =useState('');
+  const UseAgregarNuevo = (nombre2,descripcion2) =>{
+    /*if (Existe) {
+      alert("Este curso ya esta en la lista");
+      return;
+    }*/
+    
+    const nuevoCurso={
+      id: Math.floor(Math.random() * 1000),
+      nombre: nombre2,
+      descripcion: descripcion2
+    };
+    useEffect(() => {
+      setcurso([...curso, nuevoCurso]);
+    }, [])
+  };
   const RenCourseItem = curso.map((materia) => {
     return(
       <tr key={materia.id}>
@@ -57,20 +73,6 @@ export const CourseList = () => {
       </tr>
     );
   });
-  const agregarNuevo = (nombre2,descripcion2) =>{
-    /*if (Existe) {
-      alert("Este curso ya esta en la lista");
-      return;
-    }*/
-    const nuevoCurso={
-      nombre: nombre2,
-      descripcion: descripcion2
-    };
-    useEffect(()=>{
-      setcurso([...curso,nuevoCurso]);
-    },[])
-  };
-
   return (
     <>
       <table>
@@ -80,9 +82,7 @@ export const CourseList = () => {
       </table>
     <form onSubmit={ev=> {
       ev.preventDefault();
-      const nombre2 =ev.target.nombre.value;
-      const descripcion2=ev.target.descripcion.value;
-      agregarNuevo(nombre2,descripcion2);
+      UseAgregarNuevo(nombre2,descripcion2);
     }}>
         <label>
           Nombre:
@@ -90,11 +90,18 @@ export const CourseList = () => {
             name="nombre2"
             type="text"
             placeholder="Ingresa el nombre"
+            value={nombre2}
+            onChange={ev=> setnombre2(ev.target.value)}
           ></input>
         </label>
         <label>
           Descripción:
-          <textarea type="text" name="descripcion2" placeholder="Ingresa una descripcion"></textarea>
+          <textarea type="text"
+           name="descripcion2" 
+           placeholder="Ingresa una descripcion"
+           value={descripcion2}
+           onChange={ev=> setdescripcion2(ev.target.value)}
+           ></textarea>
         </label>
         <button type="submit">Agregar curso</button>
       </form>
