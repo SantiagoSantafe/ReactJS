@@ -1,5 +1,5 @@
 import React from "react";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export const CourseList = () => {
   const [curso, setcurso] = useState([{
@@ -8,17 +8,17 @@ export const CourseList = () => {
         descripcion: "para aprender matematicas",
     },
     {
-      id: Math.floor(Math.random()*1000),
+      id: Math.floor(Math.random() * 1000),
       nombre: "Ingles",
       descripcion: "para aprender idiomas",
     },
     {
-      id: Math.floor(Math.random()*1000),
+      id: Math.floor(Math.random() * 1000),
       nombre: "fisica",
       descripcion: "para aprender leyes de newton",
     },
-    
   ]);
+
   console.log(curso)
 const CourseItem = (Textname, textdescrip) => {
     const nuevocurso = {
@@ -27,9 +27,11 @@ const CourseItem = (Textname, textdescrip) => {
         nombre: Textname,
         descripcion: textdescrip,
       
+
     };
-    useEffect(()=>{
+    useEffect(() => {
       setcurso([...curso, nuevocurso]);
+
     }, [])
   };
   const Existe=(numero)=>{
@@ -52,11 +54,25 @@ const CourseItem = (Textname, textdescrip) => {
       </li>
     );
   });
-  
   return (
     <>
-    {CourseItem ("skdamksd","asndand")}
+       {CourseItem ("skdamksd","asndand")}
       <ul>{RenCourseItem}</ul>
+      <form>
+        <label>
+          Nombre:
+          <input
+            name="nombre"
+            type="text"
+            placeholder="Ingresa el nombre"
+          ></input>
+        </label>
+        <label>
+          Descripción:
+          <textarea type="text" placeholder="Ingresa una descripcion"></textarea>
+        </label>
+        <button type="submit">Agregar curso</button>
+      </form>
     </>
   );
 };
