@@ -57,7 +57,20 @@ export const CourseList = () => {
       </tr>
     );
   });
-  
+  const agregarNuevo = (nombre2,descripcion2) =>{
+    /*if (Existe) {
+      alert("Este curso ya esta en la lista");
+      return;
+    }*/
+    const nuevoCurso={
+      nombre: nombre2,
+      descripcion: descripcion2
+    };
+    useEffect(()=>{
+      setcurso([...curso,nuevoCurso]);
+    },[])
+  };
+
   return (
     <>
       <table>
@@ -65,23 +78,29 @@ export const CourseList = () => {
           {RenCourseItem}
         </td>
       </table>
-    <form>
+    <form onSubmit={ev=> {
+      ev.preventDefault();
+      const nombre2 =ev.target.nombre.value;
+      const descripcion2=ev.target.descripcion.value;
+      agregarNuevo(nombre2,descripcion2);
+    }}>
         <label>
           Nombre:
           <input
-            name="nombre"
+            name="nombre2"
             type="text"
             placeholder="Ingresa el nombre"
           ></input>
         </label>
         <label>
           Descripción:
-          <textarea type="text" placeholder="Ingresa una descripcion"></textarea>
+          <textarea type="text" name="descripcion2" placeholder="Ingresa una descripcion"></textarea>
         </label>
         <button type="submit">Agregar curso</button>
       </form>
-      
     </>
   );
-};
+  }
+
+
 
