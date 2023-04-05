@@ -1,0 +1,61 @@
+:root{
+    --backgroundColor: rgb(4, 13, 66);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--backgroundColor)
+}
+.tableList{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 3%;
+    margin: 7% 20% 0%;
+}
+.tableItem{
+    background-color: antiquewhite;
+    display: inline-block;
+    width: max-content;
+    margin: 2%;
+}
+.tableItem td{
+    background-color: blue;
+    
+}
+.tableItem .ItemCheckbox{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tableItem .ItemID{
+    max-width: 50px;
+    min-width: 48px;
+    padding: 20px;
+    justify-content: left;
+}
+.tableItem .ItemNombre{
+    max-width: 250px;
+    min-width: 250px;
+    padding: 20px;
+    
+    justify-content: center;
+}
+.tableItem .ItemDescripcion{
+    max-width: 400px;
+    min-width: 400px;
+    padding: 20px;
+    
+    justify-content: center;
+}
+
+.Agregaritem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 3%;
+    margin: 7% 20% 0%;
+}

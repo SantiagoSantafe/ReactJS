@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 export const CourseList = () => {
   const [curso, setcurso] = useState([{
         id:Math.floor(Math.random() * 1000),
-        nombre: "calculo",
-        descripcion: "para aprender matematicas",
+        nombre: "Calculo",
+        descripcion: "para aprender matematicas sad as d                  ssssssssssssssssssssssssssssssssss sssssssssssssssssssssssssssss",
     },
     {
       id: Math.floor(Math.random() * 1000),
@@ -14,7 +14,7 @@ export const CourseList = () => {
     },
     {
       id: Math.floor(Math.random() * 1000),
-      nombre: "fisica",
+      nombre: "Fisica",
       descripcion: "para aprender leyes de newton",
     },
   ]);
@@ -33,19 +33,19 @@ export const CourseList = () => {
   const RenCourseItem = curso.map((materia) => {
     return(
       <tr key={materia.id}>
-        <table>
+        <table className="tableItem">
           <tr>
-            <td>
+            <td className="ItemCheckbox">
               <input type="checkbox" onClick={()=>setcurso(curso.filter((curso) => 
               {return curso.id!==materia.id}))}></input>
             </td>
-            <td>
+            <td className="ItemID">
               <p >{materia.id}</p>
             </td>
-            <td>
+            <td className="ItemNombre">
               <p >{materia.nombre}</p>
             </td>
-            <td>
+            <td className="ItemDescripcion">
               <p >{materia.descripcion}</p>
             </td>
             <td>
@@ -60,12 +60,12 @@ export const CourseList = () => {
   
   return (
     <>
-      <table>
+      <table className="tableList">
         <td>
           {RenCourseItem}
         </td>
       </table>
-    <form>
+    <form className="Agregaritem">
         <label>
           Nombre:
           <input
