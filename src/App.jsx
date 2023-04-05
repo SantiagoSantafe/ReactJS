@@ -65,13 +65,6 @@ export const CourseList = () => {
           {RenCourseItem}
         </td>
       </table>
-      
-    </>
-  );
-};
-const BotonAgregar=()=>{
-  return (
-    <>
     <form>
         <label>
           Nombre:
@@ -87,6 +80,8 @@ const BotonAgregar=()=>{
         </label>
         <button type="submit">Agregar curso</button>
       </form>
+      
     </>
   );
 };
+
