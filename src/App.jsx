@@ -41,13 +41,12 @@ export const CourseList = () => {
         name="nombre"
         type="text"
         placeholder="Ingresa el nombre"
+        className="nombreInput"
       ></input>
-    </label>
-    <label>
       Descripción:
-      <textarea type="text" placeholder="Ingresa una descripcion"></textarea>
+      <textarea className="descripcionInput" type="text" placeholder="Ingresa una descripcion"></textarea>
     </label>
-    <button type="submit">Agregar curso</button>
+    <button className="btn" type="submit">Agregar curso</button>
   </form>
   </>)
   }
