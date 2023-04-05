@@ -62,7 +62,7 @@ export const CourseList = () => {
         </label>
         <label>
           Descripción:
-          <textarea type="text"></textarea>
+          <textarea type="text" placeholder="Ingresa una descripcion"></textarea>
         </label>
         <button type="submit">Agregar curso</button>
       </form>
