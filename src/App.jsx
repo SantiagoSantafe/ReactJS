@@ -20,20 +20,7 @@ export const CourseList = () => {
   ]);
 
   console.log(curso)
-const CourseItem = (Textname, textdescrip) => {
-    const nuevocurso = {
-      
-        id: Math.floor(Math.random()*1000),
-        nombre: Textname,
-        descripcion: textdescrip,
-      
 
-    };
-    useEffect(() => {
-      setcurso([...curso, nuevocurso]);
-
-    }, [])
-  };
   const Existe=(numero)=>{
     return (curso.map((materia)=>{
       if(materia.id===numero){
@@ -45,20 +32,47 @@ const CourseItem = (Textname, textdescrip) => {
   }
   const RenCourseItem = curso.map((materia) => {
     return(
-      <li key={materia.id}>
-        <p >{materia.id}</p>
-        <p >{materia.nombre}</p>
-        <p >{materia.descripcion}</p>
-        <button onClick={()=>setcurso(curso.filter((curso) => 
-          {return curso.id!==materia.id}))}>eliminar</button>
-      </li>
+      <tr key={materia.id}>
+        <table>
+          <tr>
+            <td>
+              <input type="checkbox" onClick={()=>setcurso(curso.filter((curso) => 
+              {return curso.id!==materia.id}))}></input>
+            </td>
+            <td>
+              <p >{materia.id}</p>
+            </td>
+            <td>
+              <p >{materia.nombre}</p>
+            </td>
+            <td>
+              <p >{materia.descripcion}</p>
+            </td>
+            <td>
+              <button onClick={()=>setcurso(curso.filter((curso) => 
+              {return curso.id!==materia.id}))}>eliminar</button>
+            </td>
+          </tr>      
+        </table>
+      </tr>
     );
   });
+  
   return (
     <>
-       {CourseItem ("skdamksd","asndand")}
-      <ul>{RenCourseItem}</ul>
-      <form>
+      <table>
+        <td>
+          {RenCourseItem}
+        </td>
+      </table>
+      
+    </>
+  );
+};
+const BotonAgregar=()=>{
+  return (
+    <>
+    <form>
         <label>
           Nombre:
           <input
