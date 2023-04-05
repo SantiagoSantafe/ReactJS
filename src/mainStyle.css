@@ -24,6 +24,10 @@ body{
     border-collapse: collapse;
     border-bottom: black 5px solid;
 }
+.titleTables{
+    font-size: 60px;
+    text-align: center;
+}
 .tableList{
     background-color: var(--background_ToDolist);
     display: flex;
@@ -63,7 +67,7 @@ body{
     text-size-adjust: 30px;
     width: 800px;
     height: 70px;
-    background-color: rgba(5, 201, 93, 0.864);
+    background-color: rgba(251, 45, 45, 0.864);
     transition: .5s ease-in-out all;
 }
 .ItemCheckbox{
