@@ -1,0 +1,137 @@
+:root{
+    --backgroundColor: #040d42;
+    --background_ToDolist: rgb(255, 255, 255);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--backgroundColor)
+}
+#Encabezado{
+    background-color: var(--background_ToDolist);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 3%;
+    margin: 0% 20% 0%;
+}
+#Encabezado h1{
+    font-size: 100px;
+    text-align: center;
+    border-collapse: collapse;
+    border-bottom: black 5px solid;
+}
+.titleTables{
+    font-size: 60px;
+    text-align: center;
+}
+.tableList{
+    background-color: var(--background_ToDolist);
+    display: flex;
+    flex-direction: column;
+    justify-content: center ; 
+    padding: 3%;
+    margin: 1% 20% 0%;
+}
+.descripcionTabla{
+    display: inline-block;
+    min-width: max-content;
+    border: 35px;
+    background-color: var(--background_ToDolist);
+}
+.descripcionTabla:hover {
+    background-color: rgb(238, 158, 11);
+    transition: .5s ease-in-out all;
+}
+.descripcionTabla .itemnull{
+    width: 50px;
+}
+
+.id, .nom, .des{
+    text-align: center;
+    border-collapse: collapse;
+    border-bottom: black 2px solid;
+}
+
+.tableItem{
+    background-color: var(--background_ToDolist);
+    display: inline-block;
+    width: max-content;
+    margin: 5px;
+}
+.tableItem:hover{
+    display: inline-flex;
+    text-size-adjust: 30px;
+    width: 800px;
+    height: 70px;
+    background-color: rgba(251, 45, 45, 0.864);
+    transition: .5s ease-in-out all;
+}
+.ItemCheckbox{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.ItemID{
+    max-width: 50px;
+    min-width: 48px;
+    padding: 20px;
+    justify-content: left;
+}
+.ItemNombre{
+    max-width: 250px;
+    min-width: 250px;
+    padding: 20px;
+    
+    justify-content: center;
+}
+.ItemDescripcion{
+    max-width: 400px;
+    min-width: 400px;
+    padding: 20px;
+    
+    justify-content: center;
+}
+.boton{
+    background-color: var(--background_ToDolist);
+    display: flex;
+    flex-direction: column;
+    justify-content: center ; 
+    padding: 0% 30px 20px;
+    margin: 0% 20% 0%;
+}
+.btn{
+    background-color: blue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 140%;
+    color: #fff;
+    border: 0px;
+    width: 100%;
+    height: 50px;
+    margin-right: 100px;
+    border-radius: 5px;    
+    cursor: pointer;
+    transition: .5s ease all;
+    overflow: hidden;
+    z-index: 3;
+}
+.btn::after{
+    content: "";
+    width: 100%;
+    height: 180%;
+    background-color: black;
+    position: absolute;
+    z-index: -1;
+    top: -100px;
+    left: 0;
+    transition: .5s ease-in-out all;
+    border-radius: 0px 0px 200% 200%;
+}
+.btn:hover:after{
+    top: 0;
+}
