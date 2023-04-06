@@ -65,7 +65,7 @@ export const CourseList = () => {
           {RenCourseItem}
         </td>
       </table>
-    <form>
+    <form >
         <label>
           Nombre:
           <input
