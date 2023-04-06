@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export const CourseList = () => {
   const [curso, setcurso] = useState([
@@ -19,47 +18,67 @@ export const CourseList = () => {
       descripcion: "para aprender leyes de newton",
     },
   ]);
+  console.log(curso);
+  const [nuevoID, setNuevoID] = useState("");
+  const [nuevoNombre, setNuevoNombre] = useState("");
+  const[nuevaDescripcion,setNuevaDescripcion]=useState("");
+  const UseAgregarNuevo = (event) => {
+    event.preventDefault();
+    if (curso.some((curso) => curso.id === nuevoID)) {
+      alert("Ya hay un curso con este mismo ID en la lista");
+      setNuevoID("");
+    } else if (curso.some((curso) => curso.nombre === nuevoNombre)) {
+      alert("Ya se encuentra un curso con el mismo nombre en la lista");
+      setNuevoNombre("");
+    } else {
+      setcurso([...curso, { id: nuevoID, nombre: nuevoNombre,descripcion:nuevaDescripcion}]);
+      setNuevoID("");
+      setNuevoNombre("");
+      setNuevaDescripcion("");
+    }
+  };
   const [mostrar, setMostrar] = useState(false);
   const [done, setDone] = useState([]);
-
-  console.log(curso);
-
-  const Existe = (numero) => {
-    return curso.map((materia) => {
-      if (materia.id === numero) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-  };
   const AgregarCurso = () => {
     return (
       <>
-        <form className="Agregaritem">
-          <label>
-            Nombre:
-            <input
-              name="nombre"
-              type="text"
-              placeholder="Ingresa el nombre"
-              className="nombreInput"
-            ></input>
-            Descripción:
-            <textarea
-              className="descripcionInput"
-              type="text"
-              placeholder="Ingresa una descripcion"
-            ></textarea>
-          </label>
-          <button className="btn" type="submit">
-            Agregar curso
-          </button>
-        </form>
+        <form onSubmit={UseAgregarNuevo}>
+        <label>
+          ID:
+          <input
+            type="text"
+            placeholder="Ingresa el ID"
+            value={nuevoID}
+            onChange={(event) => setNuevoID(event.target.value)}
+          ></input>
+        </label>
+        <label>
+          Nombre:
+          <input
+            className="nombreInput"
+            name="nombre2"
+            type="text"
+            placeholder="Ingresa el nombre"
+            value={nuevoNombre}
+            onChange={(event) => setNuevoNombre(event.target.value)}
+          ></input>
+        </label>
+        <label>
+          Descripción:
+          <textarea
+           className="descripcionInput"
+            type="text"
+            name="descripcion2"
+            placeholder="Ingresa una descripcion"
+            value={nuevaDescripcion}
+            onChange={(event)=>setNuevaDescripcion(event.target.value)}
+          ></textarea>
+        </label>
+        <button type="submit">Agregar curso</button>
+      </form>
       </>
     );
   };
-
   const RenCourseItem = curso.map((materia) => {
     return (
       <tr key={materia.id}>
