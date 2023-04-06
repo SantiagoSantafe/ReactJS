@@ -3,17 +3,17 @@ import React, { useState, useEffect } from "react";
 export const CourseList = () => {
   const [curso, setcurso] = useState([
     {
-      id: Math.floor(Math.random() * 1000),
+      id: 777,
       nombre: "Calculo",
       descripcion: "para aprender matematicas",
     },
     {
-      id: Math.floor(Math.random() * 1000),
+      id: 321,
       nombre: "Ingles",
       descripcion: "para aprender idiomas",
     },
     {
-      id: Math.floor(Math.random() * 1000),
+      id: 24,
       nombre: "Fisica",
       descripcion: "para aprender leyes de newton",
     },
@@ -21,16 +21,18 @@ export const CourseList = () => {
   console.log(curso);
   const [nuevoID, setNuevoID] = useState("");
   const [nuevoNombre, setNuevoNombre] = useState("");
-  const[nuevaDescripcion,setNuevaDescripcion]=useState("");
+  const [nuevaDescripcion,setNuevaDescripcion]=useState("");
   const UseAgregarNuevo = (event) => {
     event.preventDefault();
     if (curso.some((curso) => curso.id === nuevoID)) {
       alert("Ya hay un curso con este mismo ID en la lista");
       setNuevoID("");
-    } else if (curso.some((curso) => curso.nombre === nuevoNombre)) {
+    } 
+    else if (curso.some((curso) => curso.nombre === nuevoNombre)) {
       alert("Ya se encuentra un curso con el mismo nombre en la lista");
       setNuevoNombre("");
-    } else {
+    }
+     else {
       setcurso([...curso, { id: nuevoID, nombre: nuevoNombre,descripcion:nuevaDescripcion}]);
       setNuevoID("");
       setNuevoNombre("");
@@ -47,6 +49,7 @@ export const CourseList = () => {
           ID:
           <input
             className="idInput"
+            name="Id"
             type="text"
             placeholder="Ingresa el ID"
             value={nuevoID}
